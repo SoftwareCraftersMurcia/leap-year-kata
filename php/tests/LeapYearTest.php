@@ -48,4 +48,19 @@ final class LeapYearTest extends TestCase
         yield [1400];
         yield [1800];
     }
+
+    public function test_given_1997_is_not_leap_year(): void
+    {
+        self::assertFalse($this->leapYear->isLeapYear(1997));
+    }
+
+    public function test_given_1996_is_leap_year(): void
+    {
+        self::assertTrue($this->leapYear->isLeapYear(1996));
+    }
+
+    public function test_given_1600_is_leap_year(): void
+    {
+        self::assertTrue($this->leapYear->isLeapYear(1600));
+    }
 }
