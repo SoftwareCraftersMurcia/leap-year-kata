@@ -14,39 +14,41 @@ class LeapYearTest extends TestCase
      * 1600 es un año bisiesto (divisible entre 400)
      */
 
+    private LeapYear $leapYear;
+
+    protected function setUp(): void
+    {
+        $this->leapYear = new LeapYear();
+    }
+
     public function test_not_multiple_of_4_is_not_leap_year(): void
     {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeapYear(1997);
-
-        self::assertEquals(false, $result);
+        $this->isNotLeapYear(1997);
     }
 
     public function test_multiple_of_4_are_leap_year(): void
     {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeapYear(1996);
-
-        self::assertEquals(true, $result);
+        $this->isLeapYear(1996);
     }
 
     public function test_multiple_of_100_are_not_leap_year(): void
     {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeapYear(1800);
-
-        self::assertEquals(false, $result);
+        $this->isNotLeapYear(1800);
     }
 
     public function test_multiple_of_400_are_leap_year(): void
     {
-        $leapYear = new LeapYear();
+        $this->isLeapYear(1600);
+    }
 
-        $result = $leapYear->isLeapYear(1600);
 
-        self::assertEquals(true, $result);
+    private function isNotLeapYear(int $number): void
+    {
+        self::assertEquals(false, $this->leapYear->isLeapYear($number));
+    }
+
+    private function isLeapYear(int $number): void
+    {
+        self::assertEquals(true, $this->leapYear->isLeapYear($number));
     }
 }
