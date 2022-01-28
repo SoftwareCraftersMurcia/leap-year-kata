@@ -4,13 +4,19 @@ namespace Kata;
 
 class LeapYear
 {
-    // 1800 **NO** es un año bisiesto (divisible entre 4, adicionalmente es divisible entre 100, pero no entre 400)
     public function isLeapYear(int $number): bool
     {
-        if ($number % 4 === 0) {
-            return $number % 100 !== 0 || $number % 400 === 0;
-        }
+        return ($this->isMultipleOf($number, 4)
+            && ($this->isNotMultipleOf($number, 100) || $this->isMultipleOf($number, 400)));
+    }
 
-        return false;
+    public function isMultipleOf(int $number, int $multiple): bool
+    {
+        return $number % $multiple === 0;
+    }
+
+    public function isNotMultipleOf(int $number, int $multiple): bool
+    {
+        return !$this->isMultipleOf($number, $multiple);
     }
 }
