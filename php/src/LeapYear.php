@@ -8,7 +8,7 @@ class LeapYear
     public function isLeapYear(int $number): bool
     {
         if ($number % 4 === 0) {
-            return $number % 100 !== 0;
+            return $number % 100 !== 0 || $number % 400 === 0;
         }
 
         return false;

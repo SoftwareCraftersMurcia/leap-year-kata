@@ -40,4 +40,13 @@ class LeapYearTest extends TestCase
 
         self::assertEquals(false, $result);
     }
+
+    public function test_multiple_of_400_is_leap_year(): void
+    {
+        $leapYear = new LeapYear();
+
+        $result = $leapYear->isLeapYear(1600);
+
+        self::assertEquals(true, $result);
+    }
 }
