@@ -5,7 +5,7 @@ namespace KataTests;
 use Kata\LeapYear;
 use PHPUnit\Framework\TestCase;
 
-class LeapYearTest extends TestCase
+final class LeapYearTest extends TestCase
 {
     private LeapYear $leapYear;
 

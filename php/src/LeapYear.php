@@ -2,8 +2,11 @@
 
 namespace Kata;
 
-class LeapYear
+use JetBrains\PhpStorm\Pure;
+
+final class LeapYear
 {
+    #[Pure]
     public function isLeapYear(int $year): bool
     {
         if ($this->isDivisibleBy100ButNotBy400($year)) {
