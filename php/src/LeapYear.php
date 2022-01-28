@@ -2,10 +2,10 @@
 
 namespace Kata;
 
-class TheClass
+class LeapYear
 {
     public function theMethod(): bool
     {
-        return true;
+        return false;
     }
 }
