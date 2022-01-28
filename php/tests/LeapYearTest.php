@@ -14,7 +14,7 @@ class LeapYearTest extends TestCase
      * 1600 es un año bisiesto (divisible entre 400)
      */
 
-    public function test_1997_is_not_leap_year(): void
+    public function test_not_multiple_of_4_is_not_leap_year(): void
     {
         $leapYear = new LeapYear();
 
@@ -23,7 +23,7 @@ class LeapYearTest extends TestCase
         self::assertEquals(false, $result);
     }
 
-    public function test_1996_is_leap_year(): void
+    public function test_multiple_of_4_are_leap_year(): void
     {
         $leapYear = new LeapYear();
 
@@ -32,7 +32,7 @@ class LeapYearTest extends TestCase
         self::assertEquals(true, $result);
     }
 
-    public function test_1800_is_not_leap_year(): void
+    public function test_multiple_of_100_are_not_leap_year(): void
     {
         $leapYear = new LeapYear();
 
@@ -41,7 +41,7 @@ class LeapYearTest extends TestCase
         self::assertEquals(false, $result);
     }
 
-    public function test_multiple_of_400_is_leap_year(): void
+    public function test_multiple_of_400_are_leap_year(): void
     {
         $leapYear = new LeapYear();
 
