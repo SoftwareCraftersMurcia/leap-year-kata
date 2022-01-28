@@ -4,8 +4,8 @@ namespace Kata;
 
 class LeapYear
 {
-    public function isLeapYear(): bool
+    public function isLeapYear(int $year): bool
     {
-        return false;
+        return $year % 4 === 0;
     }
 }
