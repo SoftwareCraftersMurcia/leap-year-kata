@@ -10,12 +10,12 @@ class LeapYear
             && ($this->isNotMultipleOf($number, 100) || $this->isMultipleOf($number, 400)));
     }
 
-    public function isMultipleOf(int $number, int $multiple): bool
+    private function isMultipleOf(int $number, int $multiple): bool
     {
         return $number % $multiple === 0;
     }
 
-    public function isNotMultipleOf(int $number, int $multiple): bool
+    private function isNotMultipleOf(int $number, int $multiple): bool
     {
         return !$this->isMultipleOf($number, $multiple);
     }
