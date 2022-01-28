@@ -7,13 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class LeapYearTest extends TestCase
 {
-    /*
-     * 1997 **NO** es un año bisiesto (no es divisible entre 4)
-     * 1996 es un año bisiesto (divisible entre 4)
-     * 1800 **NO** es un año bisiesto (divisible entre 4, adicionalmente es divisible entre 100, pero no entre 400)
-     * 1600 es un año bisiesto (divisible entre 400)
-     */
-
     /**
      * @dataProvider yearsDataProvider
      */
