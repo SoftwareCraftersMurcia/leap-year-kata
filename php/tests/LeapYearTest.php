@@ -32,12 +32,20 @@ class LeapYearTest extends TestCase
         self::assertTrue($this->leapYear->isLeapYear(8));
     }
 
-    /** @test **/
-    public function given_a_number_divisible_by_100_but_not_by_400_is_not_a_leap_year(): void
+    /**
+     * @test
+     * @dataProvider providerNumberDivisibleBy100ButNotBy400
+     */
+    public function given_a_number_divisible_by_100_but_not_by_400_is_not_a_leap_year(int $year): void
     {
-        self::assertFalse($this->leapYear->isLeapYear(600));
-        self::assertFalse($this->leapYear->isLeapYear(1000));
-        self::assertFalse($this->leapYear->isLeapYear(1400));
-        self::assertFalse($this->leapYear->isLeapYear(1800));
+        self::assertFalse($this->leapYear->isLeapYear($year));
+    }
+
+    public function providerNumberDivisibleBy100ButNotBy400(): iterable
+    {
+        yield [600];
+        yield [1000];
+        yield [1400];
+        yield [1800];
     }
 }
