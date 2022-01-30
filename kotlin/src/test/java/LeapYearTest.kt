@@ -30,4 +30,13 @@ class LeapYearTest {
 
         assertFalse { isLeapYear }
     }
+
+    @Test
+    fun `should return true when year is 400`() {
+        val validator = LeapYearValidator()
+
+        val isLeapYear: Boolean = validator.isLeapYear(400)
+
+        assertTrue { isLeapYear }
+    }
 }
