@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class LeapYearTest {
@@ -10,5 +11,14 @@ class LeapYearTest {
         val isLeapYear: Boolean = validator.isLeapYear(4)
 
         assertTrue { isLeapYear }
+    }
+
+    @Test
+    fun `should return false when year is 3`() {
+        val validator = LeapYearValidator()
+
+        val isLeapYear: Boolean = validator.isLeapYear(3)
+
+        assertFalse { isLeapYear }
     }
 }
