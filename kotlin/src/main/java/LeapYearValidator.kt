@@ -1,6 +1,6 @@
 class LeapYearValidator {
     fun isLeapYear(year: Int): Boolean {
-        return true;
+        return year % 4 == 0
     }
 
 }
