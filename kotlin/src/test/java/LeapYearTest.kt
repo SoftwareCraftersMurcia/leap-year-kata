@@ -38,8 +38,9 @@ class LeapYearTest {
         assertFalse { isLeapYear }
     }
 
-    @Test
-    fun `should return true when year is 400`() {
+    @ParameterizedTest
+    @ValueSource(ints = [400,800,1200,1600])
+    fun `should return false when year is divisible by 100 but and 400`() {
         val isLeapYear: Boolean = validator.isLeapYear(400)
 
         assertTrue { isLeapYear }
