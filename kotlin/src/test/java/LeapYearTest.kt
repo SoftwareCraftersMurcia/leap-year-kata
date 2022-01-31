@@ -22,9 +22,10 @@ class LeapYearTest {
         assertTrue { isLeapYear }
     }
 
-    @Test
-    fun `should return false when year is 3`() {
-        val isLeapYear: Boolean = validator.isLeapYear(3)
+    @ParameterizedTest
+    @ValueSource(ints = [1,2,3,5])
+    fun `should return false when is not multiple of 4`(year: Int) {
+        val isLeapYear: Boolean = validator.isLeapYear(year)
 
         assertFalse { isLeapYear }
     }
